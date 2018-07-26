@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_063927) do
     t.string "phone_number"
     t.integer "role", default: 0
     t.string "order_history"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

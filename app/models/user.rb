@@ -11,11 +11,11 @@ class User < ApplicationRecord
   before_save{username.downcase!}
   before_save{email.downcase!}
 
-  VALID_USERNAME_REGEX = /^[a-z0-9_]{6,20}$/
-  VALID_NAME_REGEX = /^[a-zA-Z ]{3,50}$/
-  VALID_EMAIL_REGEX = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/
-  VALID_PHONE_NUMBER_REGEX = /^(01[2689]|09)[0-9]{8}$/
-  VALID_PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+  VALID_USERNAME_REGEX = /\A[a-z0-9_]{6,20}\z/
+  VALID_NAME_REGEX = /\A[a-zA-Z. ]{3,50}\z/
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_PHONE_NUMBER_REGEX = /\A(01[2689]|09|08)[0-9]{8}\z/
+  VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}\z/
 
   validates :username, presence: true,
     format: {with: VALID_USERNAME_REGEX},
