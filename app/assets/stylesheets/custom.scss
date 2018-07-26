@@ -1,0 +1,446 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'color.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: $gray2 !important;
+}
+
+.home {
+  width: 95% !important;
+  margin: auto;
+}
+
+nav.navbar{
+  border-radius: 0;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.container-fluid{
+  margin-left: 0 !important;
+}
+
+.slideshow{
+  width: 790px;
+  height: 300px;
+}
+
+.slideshow .carousel-inner .item img{
+  width: 790px;
+  height: 300px;
+}
+
+.left.carousel-control, .right.carousel-control{
+  display: none;
+}
+
+.carousel:hover .left.carousel-control, .carousel:hover .right.carousel-control{
+  display: block;
+}
+
+.box{
+  padding-top: 60px;
+  margin-left: 10px;
+  float: left;
+}
+
+/*slideshow*/
+
+.mySlides {display: none}
+
+img {vertical-align: middle;}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  width: 158px;
+  height: 50px;
+  text-align: center;
+  float: left;
+  font-size: 11px;
+  background-color: white;
+  margin-top: -15px;
+  padding: 8px;
+  border-right: 1px solid $light-gray;
+  margin-bottom: 5px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+/* Fading animation */
+.fade_slide {
+  -webkit-animation-name: fade_slide;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade_slide;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade_slide {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade_slide {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {font-size: 11px}
+}
+
+.advertise{
+  width: 400px;
+  height: 250px;
+  float: left;
+}
+
+.advertise img {
+  margin: 0 0 20px 15px;
+}
+
+.cart{
+  width: 400px;
+  float: left;
+  margin-top: 60px;
+  margin-left: 15px;
+}
+
+/*hot sale*/
+
+.hot-sale{
+  background-color: white;
+  margin-top: 10px;
+}
+
+.sale-title{
+  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid $gray2;
+}
+
+.sale-product{
+  height: 350px;
+  width: 100%;
+}
+
+.slideshow-container{
+  float: left;
+  width: 230px;
+  margin-top: 20px;
+}
+
+.text{
+  top: 230px;
+}
+
+.text .product-title{
+  color: black;
+  font-size: 18px;
+}
+
+.text .price{
+  color: $red3;
+  font-weight: bold;
+}
+
+.text .product-text{
+  color: black;
+  font-size: 11px !important;
+}
+
+/*hot-phone*/
+
+.hot-phone, .hot-tablet, .phukien {
+  background-color: white;
+  margin: 10px 0 0 10px;
+  float: left;
+  width: 1205px;
+}
+
+.hot-top{
+  font-size: 18px;
+  padding: 10px;
+}
+
+.hot-title{
+  font-weight: bold;
+}
+
+li{
+  float: left;
+  list-style: none;
+  margin-right: 25px;
+  font-size: 16px;
+}
+
+li a:hover{
+  text-decoration: none;
+}
+
+/*hot-product*/
+.hot-product-top, .phone-product-bottom{
+  height: 318px;
+/*   margin: 10px; */
+}
+
+.phone-product-left{
+  width: 480px;
+  height: 318px;
+  float: left;
+  border: 1px solid $gray1;
+  border-right: none;
+  padding-right: 10px;
+}
+
+.phone-title-left{
+  float: left;
+  padding: 10px;
+}
+
+.phone-title-left .price{
+  color: $red3;
+  font-weight: bold;
+}
+
+.phone-title-right{
+  float: right;
+}
+
+.phone-title-right{
+  width: 116px;
+  height: 20px;
+  background-color: $pink1;
+  border-radius: 4px;
+  padding: 2px;
+  margin-top: 15px;
+}
+
+.phone-title-right .preorder{
+  color: white;
+  font-size: 13px;
+  cursor:  default;
+}
+
+.phone-product-right{
+  width: 241px;
+  height: 318px;
+  float: left;
+  padding: 10px 0;
+  border: 1px solid $gray1;
+  position: relative;
+  cursor: pointer;
+}
+
+.phone-product-right:nth-child(n){
+  border-right: none;
+}
+
+.phone-product-right:last-child{
+  border-right: 1px solid $gray1;
+}
+
+.phone-product-right-top a img{
+  width: 170px;
+  height: 180px;
+  margin: 10px 30px;
+  display: block;
+  position: relative;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.phone-product-right:hover .phone-product-right-top a img{
+  bottom: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.phone-product-right-top .pay{
+  width: 70px;
+  height: 20px;
+  background-color: $orange2;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 2;
+  bottom: 116px;
+  left: 10px;
+  font-size: 12px;
+}
+
+.phone-product-right-title{
+  margin: 10px;
+}
+
+.phone-product-right:hover .phone-product-right-title span:first-child{
+  color: $blue2;
+}
+
+.phone-product-right-title .price{
+  color: $red3;
+  font-weight: bold;
+}
+
+.phone-product-right-title .phone-right-title{
+  font-size: 12px;
+}
+
+.rebase-border{
+  border-top: none;
+}
+
+label.discount{
+  background-image: linear-gradient(-90deg,$red3 0%, $orange1 100%);
+  border-radius: 15px;
+  padding: 1px 7px;
+  padding:0 10px 0 0;
+  color: white;
+  font-size: 10px;
+  float: right;
+  margin-top: 17px;
+}
+
+label.discount:before{
+  content: ' ';
+  display: inline-block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAaCAYAAAC+aNwHAAAABGdBTUEAALGPC/xhBQAAAVpJREFUOBGVki1LBFEUhueuH0FQTAuimxVE2KZBgxj8AxaLglj8AYLJZLOYtFpFwWQ2iMUkiyBqNCloEFEQYXzuzl7mzP0Y7z3w7j0f73PuDDtZFhl5njfRI5qJREobUB+6RL9otJxEZkD7SMd1JFLagFa6aPGzW04iMpgp9CEWzEZghQVoGN0L+I28kbLgVMA6PUmBty1YlxtRCzAuIv132THx7wKIcfRik9R3IbjfDDANkp+hpumJ8535pqhN+mySDMMhSo1OdwHUWiqJ/wu19c3tXsGRFOvm9k4SVpiPzLsr6mWKlmmIc568uEU0SW/QglLqp9q2KhYfe57slZ7vsiqNqYHs70F/XEtVZ6DCOIfs2AnY3TbknkWfUyvXGehgvhULHshHAla3jbkl4E/yaddV0wHYEgtWa6z+EfBFb8GB31HTBRxC3+gKDdRY/SOgSfSExvwOt/sHwv9i4NYIgYYAAAAASUVORK5CYII=');
+  background-size: 50% 50%;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $red1;
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 5px
+}
+
+.label-left{
+  position: absolute;
+  left: 10px;
+  bottom: 110px;
+}
+
+/*back_top*/
+
+#scroll_top{
+  display: none;
+  z-index: 99;
+}
+#scroll_top span:before{
+  cursor: pointer;
+  background: $yellow1;
+  width: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 45px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -transition: all .2s linear;
+  color: black;
+  content: '▲';
+  opacity: 0.7;
+  z-index: 8;
+  border-radius: 5px
+}
+#scroll_top span:hover:before{opacity:1}
+
+.sale-price{
+  text-decoration: line-through;
+}
+
+.product-child{
+  height: 265px;
+}
+
+.product-child:first-child{
+  border-left: none;
+}
+
+.product-child:last-child{
+  border-right: none;
+}
+
+.product-child .pay{
+  bottom: 63px;
+}
+
+footer{
+  background-color: white;
+  padding: 30px;
+  width: 1205px;
+  height: 250px;
+  float: left;
+  margin: 20px 42px;
+}
+
+footer .col-sm-4 img{
+  padding: 0 10px;
+}
+
+footer .col-sm-4 .fa{
+  font-size: 40px;
+  padding: 0 40px;
+}
+
+footer .col-sm-4 .fa:hover{
+  text-decoration: none;
+}
+
+footer .col-sm-4 i{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid $gray2;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  top: 5px;
+}
+
+footer #copyright{
+  margin-top: 20px;
+  font-size: 13px;
+  display: block;
+}
+
+footer .fa-facebook-square{color: $blue2}
+footer .fa-facebook-square:hover{color: $blue1}
+footer .fa-twitter-square{color: $light-blue; opacity: 0.8;}
+footer .fa-twitter-square:hover{color: $light-blue; opacity: 1;}
+footer .fa-google{color: $red2; opacity: 0.8;}
+footer .fa-google:hover{color: $red2; opacity: 1;}
+
+.phukien{
+  height: 310px;
+}
+
+.hot-tablet .phone-product-left, .hot-phone .phone-product-left{
+  border-left: none;
+}
+
+.hot-tablet .phone-product-right:last-child, .hot-phone .phone-product-right:last-child{
+  border-right: none;
+}
+
+.increase_margin_top{
+  margin-top: 80px;
+}
