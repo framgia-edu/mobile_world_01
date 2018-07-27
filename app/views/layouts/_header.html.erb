@@ -1,4 +1,4 @@
-<header class="navbar navbar-inverse navbar-fixed-top">
+<header class="navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -10,11 +10,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Điện thoại", phone_path %></li>
-        <li><%= link_to "Tablet", tablet_path %></li>
-        <li><%= link_to "Laptop", laptop_path %></li>
-        <li><%= link_to "Phụ kiện", accessory_path %></li>
-        <li><%= link_to "Khuyến mãi", sale_path %></li>
+        <li><%= link_to t("static_pages.phone.title"), phone_path %></li>
+        <li><%= link_to t("static_pages.tablet.title"), tablet_path %></li>
+        <li><%= link_to t("static_pages.laptop.title"), laptop_path %></li>
+        <li><%= link_to t("static_pages.accessory.title"), accessory_path %></li>
+        <li><%= link_to t("static_pages.sale.title"), sale_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" action="">
@@ -25,11 +25,18 @@
             </div>
           </div>
         </form>
-        <li>
-          <%= link_to signup_path do %>
-            <span class="glyphicon glyphicon-log-in"></span> Sign in/Sign up 
-          <% end %>
-        </li>
+        <% if logged_in? %>
+          <li><span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge">0</span></li>
+          <li>
+            <%= link_to logout_path, method: :delete do %>
+              <span class="glyphicon glyphicon-log-out"></span> <%= t "sessions.destroy.title" %>
+            <% end %>
+          </li>
+        <% else %>
+          <li id="signin"><%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"></span> <%= t "sessions.new.title" %></li>
+            <% end %>
+        <% end %>
       </ul>
     </div>
   </div>

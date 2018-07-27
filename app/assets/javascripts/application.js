@@ -13,8 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require slideshow
-//= require scroll_top
 //= require jquery
 //= require bootstrap-sprockets
+//= require slideshow
+//= require scroll_top
 //= require_tree .
