@@ -6,15 +6,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "thegioimobile", root_path, class: "navbar-brand" %>
+      <%= link_to image_tag("logo.png"), root_path, class: "navbar-brand", title: t(".home_title") %>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><%= link_to t("static_pages.phone.title"), phone_path %></li>
-        <li><%= link_to t("static_pages.tablet.title"), tablet_path %></li>
-        <li><%= link_to t("static_pages.laptop.title"), laptop_path %></li>
-        <li><%= link_to t("static_pages.accessory.title"), accessory_path %></li>
-        <li><%= link_to t("static_pages.sale.title"), sale_path %></li>
+        <li><%= link_to t("static_pages.phone.title"), phone_path, title: t(".phone_title") %></li>
+        <li><%= link_to t("static_pages.tablet.title"), tablet_path, title: t(".tablet_title") %></li>
+        <li><%= link_to t("static_pages.laptop.title"), laptop_path, title: t(".laptop_title") %></li>
+        <li><%= link_to t("static_pages.accessory.title"), accessory_path, title: t(".accessory_title") %></li>
+        <li><%= link_to t("static_pages.sale.title"), sale_path, title: t(".sale_title") %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" action="">
@@ -26,16 +26,38 @@
           </div>
         </form>
         <% if logged_in? %>
-          <li><span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge">0</span></li>
-          <li>
-            <%= link_to logout_path, method: :delete do %>
-              <span class="glyphicon glyphicon-log-out"></span> <%= t "sessions.destroy.title" %>
-            <% end %>
+          <% if current_user.admin? %>
+          <% else %>
+            <li><span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge">0</span></li>
+          <% end %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%# <%= @user.name %>  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li><%= link_to manager_path do %>
+                  <span class="glyphicon glyphicon-cog manager"></span> <%= t ".manager" %>
+                <% end %></li>
+              <% else %>
+                <li><%= link_to current_user do %>
+                  <span class="glyphicon glyphicon-briefcase"></span> <%= t ".profile" %>
+                <% end %></li>
+                <li><%= link_to edit_user_path(current_user) do %>
+                  <span class="glyphicon glyphicon-cog"></span> <%= t ".setting" %>
+                <% end %></li>
+              <% end %>
+              <li><%= link_to logout_path, method: :delete do %>
+                  <span class="glyphicon glyphicon-log-out"></span> <%= t ".destroy" %>
+              <% end %></li>
+            </ul>
           </li>
         <% else %>
-          <li id="signin"><%= link_to login_path do %>
-              <span class="glyphicon glyphicon-log-in"></span> <%= t "sessions.new.title" %></li>
+          <li id="signin">
+            <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"></span> <%= t "sessions.new.title" %>
             <% end %>
+          </li>
         <% end %>
       </ul>
     </div>

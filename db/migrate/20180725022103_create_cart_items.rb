@@ -4,8 +4,8 @@ class CreateCartItems < ActiveRecord::Migration[5.2]
       t.integer :cart_id, index: true
       t.integer :product_id, index: true
       t.integer :quantity
-      t.float :price
-      t.float :total_price
+      t.decimal :price
+      t.decimal :total_price
 
       t.timestamps
     end

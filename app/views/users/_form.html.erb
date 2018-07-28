@@ -1,0 +1,33 @@
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages", object: @user %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control", required: true,
+      placeholder: t("activerecord.attributes.user.name") %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.user.username") %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.user.email") %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.user.phone_number") %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.user.address") %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.user.password") %>
+
+  <%= f.label :password_confirm %>
+  <%= f.password_field :password_confirm, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.user.password_confirm") %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-info" %>
+<% end %>

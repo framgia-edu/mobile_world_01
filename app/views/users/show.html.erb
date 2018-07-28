@@ -1,0 +1,24 @@
+<% provide :title, @user.name %>
+<h2 class="increase_margin_top"></h2>
+<div class="row">
+  <aside class="col-md-12">
+    <section class="user_info">
+      <table class="table table-bordered table-striped">
+        <thead style="text-align: center;">
+          <tr>
+            <th><%= t "activerecord.attributes.user.username" %></th>
+            <th><%= t "activerecord.attributes.user.email" %></th>
+            <th><%= t "activerecord.attributes.user.address" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @user.name %></td>
+            <td><%= @user.email %></td>
+            <td><%= @user.address %></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </aside>
+</div>
