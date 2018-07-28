@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $(window).scroll(function(){
     if ($(this).scrollTop() > 100) {
       $('#scroll_top').fadeIn();

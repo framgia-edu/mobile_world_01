@@ -1,8 +1,8 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   var eTop = $('.zoom-images').offset().top;
   $(window).scroll(function() {
-    if(eTop - $(window).scrollTop() > "-982"){
-      $('.zoom-images').css('opacity', '1');
+    if(eTop - $(window).scrollTop() > -982){
+      $('.zoom-images').css('opacity', 1);
     }
   });
 });

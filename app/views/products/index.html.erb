@@ -1,8 +1,9 @@
 <% provide :title, t(".all_products") %>
 <h2 class="increase_margin_top"><%= t(".all_products") %></h2>
 
-<ul class="products">
+<div class="products_box">
   <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  <div class="btn btn-default new_product_btn"><%= link_to t(".new"), new_product_path(@product) %></div>
   <table class="table table-bordered table-striped">
     <thead style="text-align: center;">
       <tr>
@@ -20,17 +21,16 @@
       <% @products.each do |product| %>
         <tr>
           <td><%= link_to product.name, product %></td>
-          <td><%= link_to product.category_id, product %></td>
-          <td><%= link_to product.manufacture_id, product %></td>
-          <td><%= link_to product.description, product %></td>
-          <td><%= link_to product.price, product %></td>
-          <td><%= link_to product.quantity, product %></td>
-          <td><%= link_to product.quantity, product %></td>
+          <td><%= product.category_id %></td>
+          <td><%= product.manufacture_id %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
+          <td><%= link_to t(".edit"), edit_product_path(product) %></td>
           <td><%= link_to t(".delete"), product, method: :delete,
               data: {confirm: t("users.user.sure")} %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</ul>
-
+</div>

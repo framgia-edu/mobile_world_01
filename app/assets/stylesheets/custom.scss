@@ -618,7 +618,24 @@ span.glyphicon.glyphicon-briefcase,
   text-align: center;
 }
 
-div.well.manager{
+div.well.manager, div.products_box{
   margin-left: 10px;
   margin-right: 25px;
+}
+
+.product-description{
+  margin-left: 10px;
+}
+
+.text-area{
+  resize: vertical;
+}
+
+.new_product_btn{
+  float: right;
+  margin-top: 21px;
+}
+
+a:hover{
+  text-decoration: none;
 }
