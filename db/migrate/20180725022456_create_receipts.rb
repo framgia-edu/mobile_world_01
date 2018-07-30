@@ -3,7 +3,7 @@ class CreateReceipts < ActiveRecord::Migration[5.2]
     create_table :receipts do |t|
       t.integer :cart_id, index:true
       t.integer :user_id, index: true
-      t.float :total_price
+      t.decimal :total_price
       t.boolean :status
       t.datetime :transaction_time
       t.string :payment_method

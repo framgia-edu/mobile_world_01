@@ -1,5 +1,5 @@
 var slideIndex = 0;
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   showSlides();
 
   function showSlides() {

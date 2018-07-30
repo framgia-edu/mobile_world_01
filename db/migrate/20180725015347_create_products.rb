@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :manufacture_id, index: true
       t.string :picture
       t.string :description
-      t.float :price
+      t.decimal :price
       t.integer :quantity
 
       t.timestamps

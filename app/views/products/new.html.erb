@@ -1,0 +1,39 @@
+<% provide :title, "Thêm sản phẩm" %>
+<h2 class="increase_margin_top"><%= "Thêm sản phẩm" %></h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @product do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control", required: true,
+          placeholder: "Tên sản phẩm" %>
+
+      <%= f.label :category_id %>
+      <%= f.text_field :category_id, class: "form-control", required: true,
+        placeholder: "Mã chủng loại" %>
+
+      <%= f.label :manufacture_id %>
+      <%= f.text_field :manufacture_id, class: "form-control", required: true,
+        placeholder: "Mã hãng sản xuất" %>
+
+      <%= f.label :picture %>
+      <%= f.text_field :picture, class: "form-control", required: true,
+        placeholder: "Link ảnh mẫu" %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control text-area", required: true,
+        placeholder: "Mô tả" %>
+
+      <%= f.label :price %>
+      <%= f.text_field :price, class: "form-control", required: true,
+        placeholder: "Giá" %>
+
+      <%= f.label :quantity %>
+      <%= f.text_field :quantity, class: "form-control", required: true,
+        placeholder: "Số lượng còn" %>
+
+      <%= f.submit "Thêm", class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>

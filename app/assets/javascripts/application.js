@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require effect
 //= require slideshow
 //= require scroll_top
 //= require_tree .

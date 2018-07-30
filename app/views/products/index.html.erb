@@ -1,0 +1,36 @@
+<% provide :title, t(".all_products") %>
+<h2 class="increase_margin_top"><%= t(".all_products") %></h2>
+
+<ul class="products">
+  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  <table class="table table-bordered table-striped">
+    <thead style="text-align: center;">
+      <tr>
+        <th><%= t ".name" %></th>
+        <th><%= t ".category" %></th>
+        <th><%= t ".manufacture" %></th>
+        <th><%= t ".description" %></th>
+        <th><%= t ".price" %></th>
+        <th><%= t ".quantity" %></th>
+        <th><%= t ".edit" %></th>
+        <th><%= t ".delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.name, product %></td>
+          <td><%= link_to product.category_id, product %></td>
+          <td><%= link_to product.manufacture_id, product %></td>
+          <td><%= link_to product.description, product %></td>
+          <td><%= link_to product.price, product %></td>
+          <td><%= link_to product.quantity, product %></td>
+          <td><%= link_to product.quantity, product %></td>
+          <td><%= link_to t(".delete"), product, method: :delete,
+              data: {confirm: t("users.user.sure")} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</ul>
+

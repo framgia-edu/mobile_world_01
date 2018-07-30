@@ -17,22 +17,22 @@ en:
         user:
           attributes:
             username:
-              blank: " không được để trống."
-              invalid: " không hợp lệ. Chỉ chấp nhận các chữ cái, số và dấu gạch dưới."
+              blank: "không được để trống."
+              invalid: "không hợp lệ. Chỉ chấp nhận các chữ cái, số và dấu gạch dưới."
             name:
-              blank: " không được để trống."
-              invalid: " không hợp lệ. Chỉ chấp nhận các chữ cái."
+              blank: "không được để trống."
+              invalid: "không hợp lệ. Chỉ chấp nhận các chữ cái."
             address:
-              blank: " không được để trống."
+              blank: "không được để trống."
             email:
-              blank: " không được để trống."
-              invalid: " không hợp lệ."
+              blank: "không được để trống."
+              invalid: "không hợp lệ."
             phone_number:
-              blank: " không được để trống."
-              invalid: " không hợp lệ. Chỉ chấp nhận số điện thoại có 10 số đầu 09, 08 hoặc 11 số đầu 01."
+              blank: "không được để trống."
+              invalid: "không hợp lệ. Chỉ chấp nhận số điện thoại có 10 số đầu 09, 08 hoặc 11 số đầu 01."
             password:
-              blank: " không được để trống."
-              invalid: " không hợp lệ. Ít nhất 8 ký tự bao gồm cả chữ và số."
+              blank: "không được để trống."
+              invalid: "không hợp lệ. Ít nhất 8 ký tự bao gồm cả chữ và số."
 
   controllers:
     application_controllers:
@@ -40,8 +40,12 @@ en:
     users_controller:
       success: "Đăng ký tài khoản thành công!"
       not_found: "Người dùng không tồn tại"
+      updated_profile: "Hồ sơ đã được cập nhật"
     sessions_controller:
-      invalid: "Tên đăng nhập/mật khẩu không hợp lệ!"
+      invalid: "Tên đăng nhập hoặc mật khẩu không hợp lệ!"
+    products_controller:
+      add_success: "Thêm sản phẩm thành công"
+      not_found: "Không tìm thấy sản phẩm"
 
   shared:
     error_messages:
@@ -51,15 +55,14 @@ en:
   sessions:
     new:
       title: "Đăng nhập"
+      remember: "Nhớ tài khoản của tôi?"
       sign_up: "Chưa có tài khoản? "
-    destroy:
-      title: "Đăng xuất"
 
   static_pages:
     accessory:
       title: "Phụ kiện"
     home:
-      titlle: "Trang chủ"
+      title: "Trang chủ"
     laptop:
       title: "Máy tính xách tay"
     phone:
@@ -72,3 +75,56 @@ en:
   users:
     new:
       title: "Đăng ký"
+    edit:
+      edit_user: "Cập nhật hồ sơ"
+      save_btn: "Lưu thay đổi"
+    index:
+      all_users: "Tất cả người dùng"
+    user:
+      delete: "Xóa"
+      sure: "Bạn có chắc chắn không?"
+      delete_user: "Xóa người dùng"
+    manager:
+      manager: "Quản lý hệ thống"
+      all_users: "Danh sách người dùng"
+      all_products: "Danh sách sản phẩm"
+    destroy:
+      delete_success: "Xóa người dùng thành công"
+      delete_fail: "Xóa người dùng thất bại"
+
+  layouts:
+    header:
+      profile: "Hồ sơ"
+      manager: "Quản lý hệ thống"
+      users: "Thành viên"
+      setting: "Chỉnh sửa hồ sơ"
+      destroy: "Đăng xuất"
+      home_title: "Về trang chủ thegioimobile.com"
+      phone_title: "Điện thoại di động, smartphone"
+      tablet_title: "Máy tính bảng, tablet"
+      laptop_title: "Máy tính xách tay, laptop"
+      accessory_title: "Phụ kiện điện thoại, laptop, tablet"
+      sale_title: "Laptop, máy tính bảng ưu đãi khủng giảm giá tới 20%"
+
+  views:
+    pagination:
+      first: "« Đầu tiên"
+      last: "Cuối cùng »"
+      previous: "‹ Trước"
+      next: "Tiếp ›"
+      truncate: "..."
+
+  products:
+    index:
+      all_products: "Tất cả sản phẩm"
+      name: "Tên"
+      category: "Mã chủng loại"
+      manufacture: "Mã hảng sản xuất"
+      description: "Mô tả"
+      price: "Giá tiền"
+      quantity: "Số lượng"
+      edit: "Sửa"
+      delete: "Xóa"
+    destroy:
+      delete_success: "Xóa sản phẩm thành công"
+      delete_fail: "Không thể xóa sản phẩm"
