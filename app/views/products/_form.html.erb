@@ -1,0 +1,33 @@
+<%= form_for @product do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control", required: true,
+      placeholder: t("activerecord.attributes.product.name") %>
+
+  <%= f.label :category_id %>
+  <%= f.text_field :category_id, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.product.category_id") %>
+
+  <%= f.label :picture %>
+  <%= f.text_field :picture, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.product.picture") %>
+
+  <%= f.label :manufacture_id %>
+  <%= f.text_field :manufacture_id, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.product.manufacture_id") %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control text-area", required: true,
+    placeholder: t("activerecord.attributes.product.description"), rows: "7" %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.product.price") %>
+
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity, class: "form-control", required: true,
+    placeholder: t("activerecord.attributes.product.quantity") %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-info" %>
+<% end %>

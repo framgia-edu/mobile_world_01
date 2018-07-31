@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :logged_in_user, only: [:index, :new, :edit, :update, :destroy]
-  before_action :find_product, only: [:edit, :update, :destroy]
+  before_action :find_product, only: [:show, :edit, :update, :destroy]
   before_action :admin_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def show; end
+
+  def edit; end
+
   def create
     @product = Product.new product_params
     if @product.save
@@ -18,6 +22,15 @@ class ProductsController < ApplicationController
       redirect_to root_url
     else
       render :new
+    end
+  end
+
+  def update
+    if @product.update_attributes product_params
+      flash[:success] = t ".product_updated"
+      redirect_to products_url
+    else
+      render :edit
     end
   end
 
@@ -39,7 +52,7 @@ class ProductsController < ApplicationController
 
   def find_product
     @product = Product.find_by id: params[:id]
-    
+
     return if @product
     flash[:danger] = t ".not_found"
     redirect_to root_path

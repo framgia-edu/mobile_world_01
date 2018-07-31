@@ -12,6 +12,14 @@ en:
       session:
         username: "Tên đăng nhập"
         password: "Mật khẩu"
+      product:
+        name: "Tên sản phẩm"
+        category_id: "Mã chủng loại"
+        manufacture_id: "Mã nhà sản xuất"
+        picture: "Link ảnh"
+        description: "Mô tả"
+        price: "Giá sản phẩm"
+        quantity: "Số lượng"
     errors:
       models:
         user:
@@ -43,9 +51,6 @@ en:
       updated_profile: "Hồ sơ đã được cập nhật"
     sessions_controller:
       invalid: "Tên đăng nhập hoặc mật khẩu không hợp lệ!"
-    products_controller:
-      add_success: "Thêm sản phẩm thành công"
-      not_found: "Không tìm thấy sản phẩm"
 
   shared:
     error_messages:
@@ -119,12 +124,26 @@ en:
       all_products: "Tất cả sản phẩm"
       name: "Tên"
       category: "Mã chủng loại"
-      manufacture: "Mã hảng sản xuất"
+      manufacture: "Mã hãng sản xuất"
       description: "Mô tả"
       price: "Giá tiền"
       quantity: "Số lượng"
       edit: "Sửa"
       delete: "Xóa"
+      not_found: "Không tìm thấy sản phẩm nào"
+      new: "Thêm sản phẩm"
     destroy:
       delete_success: "Xóa sản phẩm thành công"
       delete_fail: "Không thể xóa sản phẩm"
+    edit:
+      edit_product: "Cập nhật thông tin sản phẩm"
+      save_btn: "Lưu thay đổi"
+    new:
+      new_product: "Thêm sản phẩm mới"
+      new_btn: "Thêm"
+    create:
+      add_success: "Thêm sản phẩm thành công"
+    show:
+      not_found: "Không tìm thấy sản phẩm"
+    update:
+      product_updated: "Cập nhật sản phẩm thành công"
